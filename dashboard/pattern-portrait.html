@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模式画像分析</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .charts-container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            height: calc(100vh - 1.25rem);  /* 减去header高度 */
+            overflow-y: auto;
+        }
+        
+        .chart-panel {
+            min-height: 400px;
+            height: calc((100vh - 1.25rem - 60px) / 2);  /* 自适应高度 */
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(25, 186, 139, 0.17);
+            padding: 15px;
+        }
+        
+        .chart-title {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>模式画像分析</h1>
+        <div class="showTime">当前时间：2020年3月17-0时54分14秒</div>
+        <a href="index.html" class="back-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </header>
+
+    <div class="charts-container">
+        <div class="chart-panel">
+            <h2 class="chart-title">模式特征雷达图</h2>
+            <div id="radarChart" style="width: 100%; height: 90%;"></div>
+        </div>
+        <div class="chart-panel">
+            <h2 class="chart-title">模式关系网络图</h2>
+            <div id="networkChart" style="width: 100%; height: 90%;"></div>
+        </div>
+        <div class="chart-panel">
+            <h2 class="chart-title">模式时间分布</h2>
+            <div id="timelineChart" style="width: 100%; height: 90%;"></div>
+        </div>
+        <div class="chart-panel">
+            <h2 class="chart-title">模式聚类分析</h2>
+            <div id="clusterChart" style="width: 100%; height: 90%;"></div>
+        </div>
+    </div>
+
+    <script src="js/flexible.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/pattern-data.js"></script>
+    <script src="js/pattern-portrait.js"></script>
+</body>
+</html> 
